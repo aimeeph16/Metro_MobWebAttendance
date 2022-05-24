@@ -1,0 +1,88 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  /* background-color: #002A7F; */
+  background-image: url('../assets/building_hill2.png'), linear-gradient(#0047D5 , #002A7F 25%);
+  background-size: 300%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  scroll-behavior: smooth;
+  font-family: 'Poppins';
+}
+
+.row.content {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+
+#top {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10%;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #002A7F;
+    font-size: 32px;
+    margin-top: auto;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    font-style: 'medium';
+    color: #002A7F;
+}
+
+h2 .med {
+    font-weight: 500;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color:#002A7F;
+}
+
+h3 .med {
+    font-weight: 500;
+}
+
+.btn-link {
+    border-color: transparent;
+    outline: none;
+    color: white;
+}
+
+.btn-link:hover {
+    border-color: transparent;
+}
+
+.btn-primary {
+    border-color: transparent;
+    background-color: #FF8D0C;
+    width: 300px;
+}
+
+.btn-dark {
+    background-color: transparent;
+    margin-top: 30px;
+    color: #FF8D0C;
+    font-size: 30px;
+    border: none;
+}
+
+.btn-dark:hover{
+    background-color: transparent;
+    color: #002A7F;
+}
+
+

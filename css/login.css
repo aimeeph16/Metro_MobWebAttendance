@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    /* background-image: url(https://bit.ly/2FPT1J9); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background: linear-gradient(white 5.71%, #00246D 85.71%, #002A7F 120%);
+    /* background-color: #082A77; */
+
+} 
+
+.container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 25px;
+}
+
+
+/* .container h1{
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #2979ff;
+}
+*/
+
+
+
+/* -------- Input Field -------- */
+.container form input{
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #ffffff;
+    /* color: #fff; */
+    font-size: 20px;
+    outline: none;
+}
+
+.container form input:after{
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid #ffffff;
+    /* color: #fff; */
+    font-size: 20px;
+    outline: none;
+}
+
+.container form input:focus{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* -------- Placeholder -------- */
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; /* Firefox */
+}
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+}
+
+/* -------- Button -------- */
+.container form button{
+    width : 40%;
+    text-align: center;
+    position: relative;
+    padding: 5px 0;
+    border: none;
+    border-radius: 30px;
+    background-color: #FF8D0C;
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    
+} 
+
+.container form button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    background-color: #FF8D0C;
+}
+  
+.container form button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+  
+.container form button:hover span {
+    padding-right: 25px;
+}
+  
+.container form button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+

@@ -1,0 +1,103 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: #002A7F;
+  font-family: 'Poppins';
+}
+
+.row.content {
+  flex: 1 1 auto;
+}
+
+
+.mainTop {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10%;
+}
+
+/* -------- Camera -------- */
+.camera {
+	display:flex; 
+	flex-direction: column; 
+	align-items: center;
+}
+
+.camera video {
+	width: 700px;
+}
+
+.snap {
+	height: 300px; 
+	width: 360px; 
+	border-radius: 23px; 
+	cursor: pointer; 
+	/* font-family: 'Poppins', sans-serif; 
+	font-weight:bold;
+	text-align: center;  */
+	background-color: white;
+	/* margin: 20px;  */
+	/* font-size: 1.5em; 
+	line-height: 150px; */
+}
+
+.image {
+	width: 50%;
+	height: auto;
+	/* margin-bottom: 1.2rem; */
+	opacity: 50%;
+}
+
+
+/* -------- Button -------- */
+.btn-lg {
+	padding: 0.5rem;
+	width:100%;
+	text-transform: uppercase;
+	color: #ffffff;
+	font-size: 1.1rem;
+	font-family: 'Poppins', sans-serif;
+	text-decoration: none;
+	background-color: #FF8D0C;
+	border-radius: 50px;
+	border: none;
+	display: inline-block;
+	margin-top: .8rem;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn:hover{
+	background-color: #ffffff;
+	color: #FF8D0C;
+}
+
+.btn-link {
+    border-color: transparent;
+    outline: none;
+    color: white;
+	text-transform: uppercase;
+}
+
+.btn-link:hover {
+    border-color: transparent;
+}
+
+.btn-primary {
+    border-color: transparent;
+    background-color: #FF8D0C;
+	text-transform: uppercase;
+}
+
+.btn-primary:hover {
+    border-color: transparent;
+    background-color: #ffffff;
+	color:#FF8D0C;
+}
+
+.main {
+    height: 200px;
+    justify-content: center;
+}
