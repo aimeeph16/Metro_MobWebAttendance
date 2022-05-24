@@ -22,20 +22,27 @@
     <link rel="stylesheet" href="css/table.css">
 </head>
 <body>
+    <!-- <h2>History</h2> -->
+    <div class="d-flex justify-content-center">
+        <div><h2>History</h2></div>
+    </div>
 	<div class="menu-wrap">
 		<input type="checkbox" class="toggler">
-		<h2>History</h2>
 		<div class="hamburger">
 			<div></div>
 		</div> 
 		<div class="menu"> 
 			<div> 
-				<div>
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Absence</a></li>
-					</ul>
-				</div>
+                <div class="d-flex justify-content-center flex-wrap" style="height: 100px" id="bottom">
+                    <div class="d-flex flex-column" style="padding-bottom: 50px">
+                        <div class="p-2" style="padding: 10px;">
+                            <a class="submenu" href="home.html">Home</a>
+                        </div>
+                        <div class="p-2" style="padding: 10px;">
+                            <a class="submenu" href="absence.html">Absence</a>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -58,13 +65,13 @@
 
         <div class="table-row">
             <div class="table-cell first-cell">
-                <p>2022-05-17</p>
+                <p class="align-middle">2022-05-17</p>
             </div>
             <div class="table-cell">
-                <p>999</p>
+                <p class="align-middle">999</p>
             </div>
             <div class="table-cell last-cell">
-                <p>999</p>
+                <p class="align-middle">999</p>
             </div>   
         </div>
 

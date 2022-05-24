@@ -97,6 +97,17 @@ body {
 	color:#FF8D0C;
 }
 
+.btn:focus,.btn:active {
+	outline: none !important;
+	box-shadow: none;
+ }
+
+ .frame {
+	 border-style: solid;
+	 border-color: white;
+	 border-radius: 25px;
+ }
+
 .main {
     height: 200px;
     justify-content: center;

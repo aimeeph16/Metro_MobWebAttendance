@@ -19,20 +19,32 @@
 </head>
 
 <body>
+	<div class="d-flex justify-content-center">
+        <div><h2>Absence</h2></div>
+    </div>
 	<div class="menu-wrap">
 		<input type="checkbox" class="toggler">
-		<h2>Absence</h2>
 		<div class="hamburger">
 			<div></div>
 		</div> 
 		<div class="menu"> 
 			<div> 
-				<div>
+				<!-- <div>
 					<ul>
-						<li><a href="#">Homea</a></li>
-						<li><a href="#">History</a></li>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="history.html">History</a></li>
 					</ul>
-				</div>
+				</div> -->
+				<div class="d-flex justify-content-center flex-wrap" style="height: 100px" id="bottom">
+                    <div class="d-flex flex-column" style="padding-bottom: 50px">
+                        <div class="p-2" style="padding: 10px;">
+                            <a class="submenu" href="home.html">Home</a>
+                        </div>
+                        <div class="p-2" style="padding: 10px;">
+                            <a class="submenu" href="history.html">History</a>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -70,5 +82,8 @@
             </div>
     	</div>
     </div>
+
+	<script src="js/main.js"></script>
+
 </body>
 </html>
