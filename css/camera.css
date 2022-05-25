@@ -1,13 +1,15 @@
 html,
 body {
-  height: 100%;
-  margin: 0;
+  /* height: 100%; */
+  margin: 0 auto;
   background-color: #002A7F;
   font-family: 'Poppins';
 }
 
+
 .row.content {
   flex: 1 1 auto;
+  background-color: #002A7F;
 }
 
 
@@ -106,9 +108,10 @@ body {
 	 border-style: solid;
 	 border-color: white;
 	 border-radius: 25px;
+	 width:80%;
+	 margin: 18px auto; 
+	 /* margin-top:15px;
+	 margin-bottom: 25px; */
+	 
  }
 
-.main {
-    height: 200px;
-    justify-content: center;
-}
