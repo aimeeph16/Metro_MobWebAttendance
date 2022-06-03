@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    
 }
 
 html {
@@ -11,6 +12,7 @@ html {
 }
 body {
     height: 100%;
+    overflow: auto;
 }
 
 .menu-container {
@@ -23,7 +25,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 h2 {
@@ -47,6 +48,7 @@ h2 {
     border-radius: 25px;
     cursor: pointer;
     transition: width .4s;
+    overflow: auto;
 }
 
 .dropdown.expand {
@@ -120,15 +122,16 @@ ul li a:hover {
 }
 
 .mainBottom {
-    bottom: -150px;
+    bottom: 0px;
     position: fixed;
     display: flex;
     justify-content: center;
     background-color: white;
-    height: 400px;
-    width: 75%;
-    border-radius: 111px;
+    width: 90%;
+    border-radius: 111px 111px 0 0;
     margin: 0 auto;
+    margin-top: 400px;
+    padding-top: 30px;
 }
 
 /*--------------BUTTON -------------  */
@@ -138,6 +141,7 @@ ul li a:hover {
     border-radius: 25px;
     border: none;
     box-shadow: none;
+    margin-bottom: 25px;
 }
 
 .btn-primary:active {

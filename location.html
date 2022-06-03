@@ -34,15 +34,33 @@
             <li><a href="#">Transmisi Yogyakarta</a></li>
           </ul>
       </div>
-      <div style="height: 300px;">
+      <!-- <div style="height: 300px; ">
           <br>
-      </div>
-      <div class="d-flex justify-content-center" >
-          <div class="mainBottom" >
-            <div>
-                <h2>Position</h2>
-                <button type="button" class="btn btn-primary" style="width: 270px"> Confirm</button>
-            </div>
+      </div> -->
+      <div class="d-flex justify-content-center">
+          <div class="mainBottom">
+              <div class="d-flex align-items-center flex-column">
+                <div class="p-2" style="margin: 0 35px 0 35px; text-align: center">
+                    <p style="overflow: auto;"> *Pilih lokasi kantor/biro tempat anda bekerja </p>
+                </div>    
+                  <div class="p-2">
+                      <div class="d-flex align-items-center flex-column">
+                          <button type="button" class="btn btn-primary" id="getDistance" onclick="getLocation()"> Get your current location </button>
+                      </div>
+                      <div id="showPosition"  class="d-flex align-items-center flex-column">
+                
+                          <h2 class="p-2">Position:</h2>
+                          <p class="p-2">Your distance to the office is:</p>
+                          <p class="p-2" id="demo"></p>
+                          
+                          <p class="p-2">Work status: WFO</p>
+                      </div>
+                  </div>
+                  <div class="p-2">
+                      <button type="button" class="btn btn-primary" style="width: 270px" id="confirmBtn"> Confirm</button>
+                      <!-- <button type="button" class="btn btn-block" style="width: 270px"> Confirm</button> -->
+                  </div>
+              </div>
           </div>
       </div>
 
@@ -66,6 +84,21 @@
                 }
             });
         });
+
+        var x = document.getElementById("demo");
+        function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+        }
+
+        function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+        }
+
       </script>
 
   </body>
