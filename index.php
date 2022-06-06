@@ -50,6 +50,9 @@
           </section>
 
         <?php
+        session_start();
+        // $_SESSION['test'] = "WENDY";
+        
         require_once 'include/DB_Functions.php';
 
         $DB_HOST = "localhost";
@@ -74,6 +77,7 @@
             // $db = new DB_Functions();
             $nik = $_POST['nik'];
             $password = $_POST['password'];
+            
             if (empty($nik) || empty($password)) {
             echo "empty";
             } else {
@@ -107,11 +111,16 @@
 
                 while( $row = mysqli_fetch_assoc($select)) {
                   echo "nik: " .$row['NIK']. "name: " .$row['Name'];
+                  $name = $row['Name'];
+                  $_SESSION['nik'] = $row['NIK'];
+                  $_SESSION['name'] = $row['Name'];
                   // echo hash('sha256', $password);
                   // echo password_verify($row['salt'], hash('sha256', $password));
                     if ($hash == $row["salt"]) {
                       echo "user found";
                       header("Location:home.php");
+                    } else {
+                      echo "user not found";
                     }
                 }
             }
