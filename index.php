@@ -50,21 +50,77 @@
           </section>
 
         <?php
-        // require_once 'include/DB_Functions.php';
+        require_once 'include/DB_Functions.php';
+
+        $DB_HOST = "localhost";
+        $DB_USER = "root";
+        $DB_PASSWORD = "";
+
+        $DB_DATABASE = "MetroAttendance";
+            
+            // koneksi ke mysql database
+            $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE);
+            
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+              }
+
+
         // $db = new DB_Functions();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // collect value of input field
-            require_once 'include/DB_Functions.php';
-            $db = new DB_Functions();
+            // require_once 'include/DB_Functions.php';
+            // $db = new DB_Functions();
             $nik = $_POST['nik'];
             $password = $_POST['password'];
             if (empty($nik) || empty($password)) {
             echo "empty";
             } else {
-              header("Location:home.php");
-              echo $password;
-              echo $nik;
+              // echo $password;
+              // echo $nik;
+
+              $hash = hash('sha256', $password);
+
+              // echo $hash;
+
+              // //prepare the statement
+              // $stmt = $pdo->prepare("SELECT * FROM user WHERE NIK=?");
+              // //execute the statement
+              // $stmt->execute([$NIK]); 
+              // //fetch result
+              // $user = $stmt->fetch();
+
+              // if ($user) {
+              //     header("Location:home.php");
+              // } else {
+              //     // NIK does not exist
+              //     echo "<p>user not found</p>";
+              // } 
+
+
+
+              $select = mysqli_query($conn, "SELECT * FROM `user` WHERE `NIK` = $nik");
+
+              if (mysqli_num_rows($select) > 0) {
+                echo "nik found";
+
+                while( $row = mysqli_fetch_assoc($select)) {
+                  echo "nik: " .$row['NIK']. "name: " .$row['Name'];
+                  // echo hash('sha256', $password);
+                  // echo password_verify($row['salt'], hash('sha256', $password));
+                    if ($hash == $row["salt"]) {
+                      echo "user found";
+                      header("Location:home.php");
+                    }
+                }
+            }
+        
+            else {
+              exit('user not found');
+            }
+
+              
             }
         }
 

@@ -1,6 +1,6 @@
 <?php
 class DB_Functions {
-    private $conn;
+    public $conn;
     // constructor
     function __construct() {
         require_once 'DB_Connect.php';
