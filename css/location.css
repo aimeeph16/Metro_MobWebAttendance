@@ -92,6 +92,14 @@ ul li {
     border: 1px solid transparent;
 }
 
+ul li button{
+    background-color: transparent;
+}
+
+ul li .btn-secondary {
+    background-color: transparent;
+}
+
 ul li:last-child {
     border-bottom: none;
 }
@@ -158,4 +166,26 @@ ul li a:hover {
     color: #FF8D0C;
 }
 
+.dropdown .btn-secondary {
+    background-color: transparent !important;
+    color: white;
+    /* border-radius: 25px; */
+    border: none;
+    box-shadow: none;
+    margin-bottom: 25px;
+}
+
+.li .btn-secondary:active {
+    background-color: white;
+    box-shadow: none;
+    border: #FF8D0C;
+    color: #FF8D0C;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    box-shadow: none;
+    border: #FF8D0C;
+    color: #FF8D0C;
+}
 

@@ -108,6 +108,8 @@ h2{
 	height: 103%;
 	/* visibility: hidden; */
 	transition: .6s;
+	/* transform: translateZ(0); */
+	
 }
 
 .menu > div{
@@ -116,10 +118,11 @@ h2{
     left: 50%;
     transform: translateX(-50%) translateY(-150%);
     width: 97%;
-    height: 500px;
+    /* height: 500px; */
+	/* height: 250%; */
 	margin: 0 auto;
     border-radius: 111px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +149,10 @@ h2{
 	font-size: 1.2rem;
 	transition: 3;
 	display: inline-block;
+	
 }
+
+
 
 .submenu:hover{
 	color: #FF8D0C;
@@ -158,6 +164,7 @@ h2{
 
 .toggler:checked ~ .menu > div{
 	transform: translateX(-50%) translateY(-130%);
+	
 }
 
 .toggler:checked ~ .menu > div > div{

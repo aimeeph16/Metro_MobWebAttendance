@@ -27,7 +27,7 @@
 		<div class="hamburger">
 			<div></div>
 		</div> 
-		<div class="menu"> 
+		<div class="menu" > 
 			<div> 
 				<!-- <div>
 					<ul>
@@ -38,10 +38,10 @@
 				<div class="d-flex justify-content-center flex-wrap" style="height: 100px" id="bottom">
                     <div class="d-flex flex-column" style="padding-bottom: 50px">
                         <div class="p-2" style="padding: 10px;">
-                            <a class="submenu" href="home.php">Home</a>
+                            <a class="submenu" href="home.php" id="pageButton" name="menubutton">Home</a>
                         </div>
                         <div class="p-2" style="padding: 10px;">
-                            <a class="submenu" href="history.html">History</a>
+                            <a class="submenu" href="history.html" id="pageButton">History</a>
                         </div>
                     </div>
                 </div>
@@ -50,9 +50,7 @@
 	</div>
     <div class="container">
     	<div class="content">
-			<form action="camera.html">
-				<button type="submit" class="btn"><span class="bi bi-camera" ></span> Take a Picture</button>
-			</form>
+			
     		<!-- <h2>Welcome</h2> -->
             <div class="row">
                 <div class="column">
@@ -82,6 +80,10 @@
 					<p>00:00:00</p>
                 </div>
             </div>
+			<div style="margin-top:10%;"></br></div>
+			<form action="camera.html">
+				<button type="submit" class="btn btn-primary"><span class="bi bi-camera" ></span> Take a Picture</button>
+			</form>
     	</div>
     </div>
 

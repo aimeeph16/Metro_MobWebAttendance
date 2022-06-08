@@ -11,6 +11,7 @@ navToggle.addEventListener("click", () => {
   });
 });
 
+document.getElementById("pageButton").disabled=true;
 
 window.addEventListener(
   "resize", () => {
@@ -20,9 +21,17 @@ window.addEventListener(
         icon.classList.remove("hidden");
       });
       navOpenIcon.classList.add("hidden");
+      
+      
     }
   },
   { passive: false }
 );
 
 screen.orientation.lock()
+
+// if () {
+//   document.getElementById("pageButton").disabled = true;
+// } else {
+//   document.getElementById("pageButton").disabled = false;
+// }
