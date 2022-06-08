@@ -81,9 +81,12 @@ y.innerHTML = "Your distance to " + document.getElementById('officeName').value 
 function update() {
     var select = document.getElementById('office');
     var option = select.options[select.selectedIndex];
-
+    checkOffice();
     document.getElementById('value').value = option.value;
     document.getElementById('officeName').value = option.text;
 }
 
 update();
+
+/*--------------------------------------*/
+
