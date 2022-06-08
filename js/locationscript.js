@@ -1,15 +1,15 @@
-// var office=['kedoya', 'bandung', 'joglo', 'aceh', 
-//             'biro semarang', 'makasar', 'transmisi semarang', 
-//             'transmisi surabaya', 'transmisi denpasar', 
-//             'transmisi yogyakarta'];
+var office=['kedoya', 'bandung', 'joglo', 'aceh', 
+            'biro semarang', 'makasar', 'transmisi semarang', 
+            'transmisi surabaya', 'transmisi denpasar', 
+            'transmisi yogyakarta'];
 
-var office="";
+// var office="";
 
 function checkOffice() {
-    office = document.getElementById('officeName').value;
+    // office = document.getElementById('officeName').value;
+    
     document.getElementById("getLocationContent").style.display="block";
 }
-
 
 $(document).ready(function(){
     $('.dropdown').click(function(){
@@ -33,6 +33,8 @@ $(document).ready(function(){
 
 var kedoyaLat =  -6.186957018673723;
 var kedoyaLong = 106.7585642800948;
+var acehLat = 5.5096526;
+var acehLong = 95.3475721;
 
 var x = document.getElementById("location");
 var y = document.getElementById("distance");
@@ -70,8 +72,18 @@ function toRad(Value)
 function showPosition(position) {
 x.innerHTML = "Latitude: " + position.coords.latitude +
 "<br>Longitude: " + position.coords.longitude;
-// y.innerHTML = "Your distance to the office is: " + 
-// (calcCrow(kedoyaLat, kedoyaLong, position.coords.latitude, position.coords.longitude).toFixed(1)) +
-// " km";
-y.innerHTML = office;
+y.innerHTML = "Your distance to " + document.getElementById('officeName').value + " office is: " + 
+(calcCrow(acehLat, acehLong, position.coords.latitude, position.coords.longitude).toFixed(1)) +
+" km";
+// y.innerHTML = office;
 }
+
+function update() {
+    var select = document.getElementById('office');
+    var option = select.options[select.selectedIndex];
+
+    document.getElementById('value').value = option.value;
+    document.getElementById('officeName').value = option.text;
+}
+
+update();
