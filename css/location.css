@@ -6,10 +6,10 @@
     
 }
 
-html {
+/* html {
     background-color: #002A7F;
     height: 100%;
-}
+} */
 body {
     height: 100%;
     overflow: auto;
@@ -30,6 +30,7 @@ body {
 h2 {
     color: #002A7F;
     text-align: center;
+    font-size: 18px;
 }
 
 /*------DROP DOWN-------*/

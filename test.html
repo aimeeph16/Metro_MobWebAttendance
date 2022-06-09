@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Radio Button</title>
+</head>
+<body>
+    <p>Select your size:</p>
+    <div class="select animated zoomIn">
+        <!-- You can toggle select (disabled) -->
+        <input type="radio" name="option">
+        <i class="toggle icon icon-arrow-down"></i>
+        <i class="toggle icon icon-arrow-up"></i>
+        <span class="placeholder">Choose your location</span>
+
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="KDY" id="kdy">
+            <span class="title animated fadeIn"><label for="kdy">Kedoya</label></span>
+            <!-- <span class="title animated fadeIn"><i class="icon icon-fire"></i>Fire</span> -->
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="BDG" id="bdg">
+            <span class="title animated fadeIn"><label for="bdg">Bandung</label></span>
+            <!-- <span class="title animated fadeIn"><i class="icon icon-handbag"></i>Handbag</span> -->
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="JGL" id="jgl">
+            <span class="title animated fadeIn"><label for="jgl">Joglo</label></span>
+                <!-- <i class="icon icon-badge"></i>Badge -->
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="ACH" id="ach">
+            <span class="title animated fadeIn"><label for="ach">Aceh</label></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="BSM" id="bsm">
+            <span class="title animated fadeIn"><label for="bsm">Biro Semarang</label></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="MKS" id="mks">
+            <span class="title animated fadeIn"><label for="mks">Makasar</label></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="TSM" id="tsm">
+            <span class="title animated fadeIn"><label for="tsm">Transmisi Semarang</label></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="TSB" id="tsb">
+            <span class="title animated fadeIn"><label for="tsb">Transmisi Surabaya</label></span>
+        </label>
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="TDP" id="tdp">
+            <span class="title animated fadeIn"><label for="tdp">Transmisi Denpasar</label></span>
+        </label> 
+        <label class="option">
+            <input type="radio" name="option" onclick="checkOffice();" value="TYK" id="tyk">
+            <span class="title animated fadeIn"><label for="tyk">Transmisi Yogyakarta</label></span>
+        </label>
+    </div>
+    <p>
+        <button id="btn">Show Selected Value</button>
+    </p>
+
+    <p id="output"></p>
+
+    <script>
+        const btn = document.querySelector('#btn');        
+        const radioButtons = document.querySelectorAll('input[name="size"]');
+        btn.addEventListener("click", () => {
+            let selectedSize;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedSize = radioButton.value;
+                    break;
+                }
+            }
+            // show the output:
+            output.innerText = selectedSize ? `You selected ${selectedSize}` : `You haven't selected any size`;
+        });
+    </script>
+</body>
+</html>

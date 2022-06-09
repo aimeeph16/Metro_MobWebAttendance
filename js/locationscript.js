@@ -1,7 +1,7 @@
-var office=['kedoya', 'bandung', 'joglo', 'aceh', 
-            'biro semarang', 'makasar', 'transmisi semarang', 
-            'transmisi surabaya', 'transmisi denpasar', 
-            'transmisi yogyakarta'];
+// var office=['kedoya', 'bandung', 'joglo', 'aceh', 
+//             'biro semarang', 'makasar', 'transmisi semarang', 
+//             'transmisi surabaya', 'transmisi denpasar', 
+//             'transmisi yogyakarta'];
 
 // var office="";
 
@@ -38,6 +38,7 @@ var acehLong = 95.3475721;
 
 var x = document.getElementById("location");
 var y = document.getElementById("distance");
+var z = document.getElementById("office");
 
 function getLocation() {
 if (navigator.geolocation) {
@@ -72,21 +73,24 @@ function toRad(Value)
 function showPosition(position) {
 x.innerHTML = "Latitude: " + position.coords.latitude +
 "<br>Longitude: " + position.coords.longitude;
-y.innerHTML = "Your distance to " + document.getElementById('officeName').value + " office is: " + 
+y.innerHTML = "Your distance to " + selectedOffice + " office is: " + 
 (calcCrow(acehLat, acehLong, position.coords.latitude, position.coords.longitude).toFixed(1)) +
 " km";
-// y.innerHTML = office;
-}
 
-function update() {
-    var select = document.getElementById('office');
-    var option = select.options[select.selectedIndex];
-    checkOffice();
-    document.getElementById('value').value = option.value;
-    document.getElementById('officeName').value = option.text;
 }
-
-update();
 
 /*--------------------------------------*/
-
+var selectedOffice;
+const btn = document.querySelector('#btn');        
+const radioButtons = document.querySelectorAll('input[name="option"]');
+btn.addEventListener("click", () => {
+    // let selectedOffice;
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            selectedOffice = radioButton.value;
+            break;
+        }
+    }
+    
+    getLocation();
+});

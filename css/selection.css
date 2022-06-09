@@ -1,4 +1,4 @@
-body {
+/* body {
   background: transparent;
   font-family: 'Poppins', sans-serif;
 }
@@ -14,7 +14,7 @@ body {
     visibility: hidden;
 }
 /** Custom Select **/
-.custom-select-wrapper {
+/* .custom-select-wrapper {
   position: relative;
   display: inline-block;
   user-select: none;
@@ -58,7 +58,7 @@ body {
         margin-top: -3px;
         /* border-bottom: 1px solid #fff;
         border-right: 1px solid #fff; */
-        transform: rotate(45deg) translateY(-50%);
+        /* transform: rotate(45deg) translateY(-50%);
         transition: all .4s ease-in-out;
         transform-origin: 50% 0;
       }
@@ -66,9 +66,9 @@ body {
       .custom-select.opened .custom-select-trigger:after {
         margin-top: 3px;
         transform: rotate(-135deg) translateY(-50%);
-      }
+      } */
 
-  .custom-options {
+  /* .custom-options {
     position: absolute;
     display: block;
     top: 100%; left: 0; right: 0;
@@ -133,4 +133,47 @@ body {
     .custom-option:hover,
     .custom-option.selection {
       background: black;
-    }
+    }  */
+
+/*----------------*/
+.menu-container {
+    z-index: 1;
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.selectOffice {
+    text-transform: uppercase;
+    position: relative;
+    background: #FF8D0C;
+    color: white;
+    font-size: 20px;
+    padding: 8px 20px;
+    width: 150px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: width .4s;
+    overflow: auto;
+}
+
+.selectOffice:active {
+    background-color: white;
+    box-shadow: none;
+    border: #FF8D0C;
+    color: #FF8D0C;
+}
+
+input {
+    visibility: hidden;
+}
