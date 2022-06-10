@@ -147,6 +147,7 @@ ul li a:hover {
     margin: 0 auto;
     margin-top: 400px;
     padding-top: 30px;
+    z-index: 1;
 }
 
 /*--------------BUTTON -------------  */
