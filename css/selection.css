@@ -165,7 +165,6 @@
     cursor: pointer;
     transition: width .4s;
     overflow: auto;
-    z-index: 2;
 }
 
 .selectOffice:active {
