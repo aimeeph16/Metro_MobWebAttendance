@@ -131,11 +131,6 @@ ul li a:hover {
 }
 
 /*-------------------------*/
-.selectOffice {
-    /* display: none; */
-    background-color: #002A7F;
-}
-
 .mainBottom {
     bottom: 0px;
     position: fixed;
