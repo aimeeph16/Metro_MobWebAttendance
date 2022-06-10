@@ -19,136 +19,132 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
   </head>
   <body style="background-color: #002A7F;">
-    
-    <div class="menu-container" >
-        <br>
-        <br>
-        <div class="select animated zoomIn">
-            <!-- You can toggle select (disabled) -->
-            <input type="radio" name="option">
-            <i class="toggle icon icon-arrow-down"></i>
-            <i class="toggle icon icon-arrow-up"></i>
-            <span class="placeholder">Choose your location</span>
-    
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Kedoya" id="kdy">
-                <span class="title animated fadeIn"><label for="kdy">Kedoya</label></span>
-                <!-- <span class="title animated fadeIn"><i class="icon icon-fire"></i>Fire</span> -->
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Bandung" id="bdg">
-                <span class="title animated fadeIn"><label for="bdg">Bandung</label></span>
-                <!-- <span class="title animated fadeIn"><i class="icon icon-handbag"></i>Handbag</span> -->
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Joglo" id="jgl">
-                <span class="title animated fadeIn"><label for="jgl">Joglo</label></span>
-                    <!-- <i class="icon icon-badge"></i>Badge -->
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Aceh" id="ach">
-                <span class="title animated fadeIn"><label for="ach">Aceh</label></span>
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Biro Semarang" id="bsm">
-                <span class="title animated fadeIn"><label for="bsm">Biro Semarang</label></span>
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Makasar" id="mks">
-                <span class="title animated fadeIn"><label for="mks">Makasar</label></span>
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Semarang" id="tsm">
-                <span class="title animated fadeIn"><label for="tsm">Transmisi Semarang</label></span>
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Surabaya" id="tsb">
-                <span class="title animated fadeIn"><label for="tsb">Transmisi Surabaya</label></span>
-            </label>
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Denpasar" id="tdp">
-                <span class="title animated fadeIn"><label for="tdp">Transmisi Denpasar</label></span>
-            </label> 
-            <label class="option">
-                <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Yogyakarta" id="tyk">
-                <span class="title animated fadeIn"><label for="tyk">Transmisi Yogyakarta</label></span>
-            </label>
-    
+    <div id="holder">
+        <div class="menu-container" id="header">
+            <br>
+            <br>
+            <div class="select animated zoomIn">
+                <!-- You can toggle select (disabled) -->
+                <input type="radio" name="option">
+                <i class="toggle icon icon-arrow-down"></i>
+                <i class="toggle icon icon-arrow-up"></i>
+                <span class="placeholder">Choose your location</span>
         
-        </div>
-          <!-- <div class="center">
-              <select name="sources" class="custom-select sources" placeholder="Source Type" id="office" onChange="update()">
-                  <option value="kdy">Kedoya</option>
-                  <option value="bdg">Bandung</option>
-                  <option value="jgl">Joglo</option>
-              </select>
-            </div> -->
-        <!-- <div class="dropdown">Menu<span class="bi bi-chevron-down"></span></div> -->
-        <!-- <div class="dropdown">Menu<span class="fas fa-bars"></span></div>   -->
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Kedoya" id="kdy">
+                    <span class="title animated fadeIn"><label for="kdy">Kedoya</label></span>
+                    <!-- <span class="title animated fadeIn"><i class="icon icon-fire"></i>Fire</span> -->
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Bandung" id="bdg">
+                    <span class="title animated fadeIn"><label for="bdg">Bandung</label></span>
+                    <!-- <span class="title animated fadeIn"><i class="icon icon-handbag"></i>Handbag</span> -->
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Joglo" id="jgl">
+                    <span class="title animated fadeIn"><label for="jgl">Joglo</label></span>
+                        <!-- <i class="icon icon-badge"></i>Badge -->
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Aceh" id="ach">
+                    <span class="title animated fadeIn"><label for="ach">Aceh</label></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Biro Semarang" id="bsm">
+                    <span class="title animated fadeIn"><label for="bsm">Biro Semarang</label></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Makasar" id="mks">
+                    <span class="title animated fadeIn"><label for="mks">Makasar</label></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Semarang" id="tsm">
+                    <span class="title animated fadeIn"><label for="tsm">Transmisi Semarang</label></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Surabaya" id="tsb">
+                    <span class="title animated fadeIn"><label for="tsb">Transmisi Surabaya</label></span>
+                </label>
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Denpasar" id="tdp">
+                    <span class="title animated fadeIn"><label for="tdp">Transmisi Denpasar</label></span>
+                </label> 
+                <label class="option">
+                    <input type="radio" name="option" onclick="checkOffice();" value="Transmisi Yogyakarta" id="tyk">
+                    <span class="title animated fadeIn"><label for="tyk">Transmisi Yogyakarta</label></span>
+                </label>
         
-         <!-- <ul>
-            <li><a href="#" onClick="checkOffice()">Kedoya</a></li>
-            <li><a href="#" onClick="checkOffice()">Bandung</a></li>
-            <li><a href="#" onClick="checkOffice()">Joglo</a></li>
-            <li><a href="#" onClick="checkOffice()">Aceh</a></li>
-            <li><a href="#" onClick="checkOffice()">Biro Semarang</a></li> 
-            <li><a href="#" onClick="checkOffice()">Makasar</a></li>
-            <li><a href="#" onClick="checkOffice()">Transmisi Semarang</a></li>
-            <li ><a href="#" onClick="checkOffice()">Transmisi Surabaya</a></li>
-            <li><a href="#" onClick="checkOffice()">Transmisi Denpasar</a></li>
-            <li><a href="#" onClick="checkOffice()">Transmisi Yogyakarta</a></li>
-          </ul> -->
-
-          <!-- <select class="selectOffice" id="office" onChange="update()">
-            <option value="kdy">Kedoya</option>
-            <option value="bdg">Bandung</option>
-            <option value="jgl">Joglo</option>
-          </select> -->
-        
-
-      <!-- <div style="height: 300px; ">
-          <br>
-       -->
-      
-      
-    </div>
-
-    <!-- <input type="text" id="value">
-    <input type="text" id="officeName">  -->
-
+            
+            </div>
+              <!-- <div class="center">
+                  <select name="sources" class="custom-select sources" placeholder="Source Type" id="office" onChange="update()">
+                      <option value="kdy">Kedoya</option>
+                      <option value="bdg">Bandung</option>
+                      <option value="jgl">Joglo</option>
+                  </select>
+                </div> -->
+            <!-- <div class="dropdown">Menu<span class="bi bi-chevron-down"></span></div> -->
+            <!-- <div class="dropdown">Menu<span class="fas fa-bars"></span></div>   -->
+            
+             <!-- <ul>
+                <li><a href="#" onClick="checkOffice()">Kedoya</a></li>
+                <li><a href="#" onClick="checkOffice()">Bandung</a></li>
+                <li><a href="#" onClick="checkOffice()">Joglo</a></li>
+                <li><a href="#" onClick="checkOffice()">Aceh</a></li>
+                <li><a href="#" onClick="checkOffice()">Biro Semarang</a></li> 
+                <li><a href="#" onClick="checkOffice()">Makasar</a></li>
+                <li><a href="#" onClick="checkOffice()">Transmisi Semarang</a></li>
+                <li ><a href="#" onClick="checkOffice()">Transmisi Surabaya</a></li>
+                <li><a href="#" onClick="checkOffice()">Transmisi Denpasar</a></li>
+                <li><a href="#" onClick="checkOffice()">Transmisi Yogyakarta</a></li>
+              </ul> -->
     
-    <div class="d-flex justify-content-center">
-          <div class="mainBottom">
-              <div class="d-flex align-items-center flex-column">
-                <div class="p-2" style="margin: 0 35px 0 35px; text-align: center">
-                    <p style="overflow: auto;"> *Pilih lokasi kantor/biro tempat anda bekerja </p>
-                </div>
-                <div class="p-2" id="getLocationContent" style="display:none;">
-                  <!-- <div class="p-2"> -->
-                    <div class="p-2"> 
-                        <div class="d-flex align-items-center flex-column">
-                            <!-- <button type="button" class="btn btn-primary" id="getDistance" onclick="getLocation()"> Get your current location </button> -->
-                            <button type="button" class="btn btn-primary" id="btn"> Get your current location </button>
-                        </div>
-                        <div id="showPosition" class="d-flex align-items-center flex-column">
-                  
-                            <h2 class="p-2">Position:</h2>
-                            <p class="p-2" id="location"></p>
-                            <p class="p-2" id="distance"></p>
-                            <p class="p-2" id="office"></p>
-                            <p class="p-2">Work status: WFO</p>
-                        </div>
+              <!-- <select class="selectOffice" id="office" onChange="update()">
+                <option value="kdy">Kedoya</option>
+                <option value="bdg">Bandung</option>
+                <option value="jgl">Joglo</option>
+              </select> -->
+            
+    
+              
+              
+              
+            </div>
+    
+        <div class="d-flex justify-content-center">
+              <div class="mainBottom">
+                  <div class="d-flex align-items-center flex-column">
+                    <div class="p-2" style="margin: 0 35px 0 35px; text-align: center">
+                        <p style="overflow: auto;"> *Pilih lokasi kantor/biro tempat anda bekerja </p>
                     </div>
-                    <div class="p-2">
-                        <form action="attendance.html">
-                            <button type="submit" class="btn btn-primary" style="width: 270px" id="confirmBtn"> Confirm</button>
-                        </form>
-                        
-                    </div>
-                </div>    
+                    <div class="p-2" id="getLocationContent" style="display:none;">
+                      <!-- <div class="p-2"> -->
+                        <div class="p-2"> 
+                            <div class="d-flex align-items-center flex-column">
+                                <!-- <button type="button" class="btn btn-primary" id="getDistance" onclick="getLocation()"> Get your current location </button> -->
+                                <button type="button" class="btn btn-primary" id="btn"> Get your current location </button>
+                            </div>
+                            <div id="showPosition" class="d-flex align-items-center flex-column">
+                      
+                                <h2 class="p-2">Position:</h2>
+                                <p class="p-2" id="location"></p>
+                                <p class="p-2" id="distance"></p>
+                                <p class="p-2" id="office"></p>
+                                <p class="p-2">Work status: WFO</p>
+                            </div>
+                        </div>
+                        <div class="p-2">
+                            <form action="attendance.html">
+                                <button type="submit" class="btn btn-primary" style="width: 270px" id="confirmBtn"> Confirm</button>
+                            </form>
+                            
+                        </div>
+                    </div>    
+                  </div>
               </div>
           </div>
-      </div>
+    </div>
+    
       <script src="js/locationscript.js" type="text/javascript"></script>
       <!-- <script type="text/javascript"> -->
  

@@ -6,13 +6,18 @@
     
 }
 
-/* html {
+html {
     background-color: #002A7F;
     height: 100%;
-} */
+}
 body {
     height: 100%;
     overflow: auto;
+}
+
+#holder {
+    min-height: 100%;
+    position:relative;
 }
 
 .menu-container {
@@ -132,14 +137,15 @@ ul li a:hover {
 
 /*-------------------------*/
 .mainBottom {
-    bottom: 0px;
-    position: fixed;
+    /* top:300px; */
+    bottom: 0;
+    position: absolute;
     display: flex;
     justify-content: center;
     background-color: white;
     width: 90%;
     border-radius: 111px 111px 0 0;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 400px;
     padding-top: 30px;
 }
