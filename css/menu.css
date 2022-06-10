@@ -119,10 +119,10 @@ h2{
     transform: translateX(-50%) translateY(-150%);
     width: 97%;
     /* height: 500px; */
-	/* height: 250%; */
+	height: 50%;
 	margin: 0 auto;
     border-radius: 111px;
-    background-color: red;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -163,7 +163,7 @@ h2{
 }
 
 .toggler:checked ~ .menu > div{
-	transform: translateX(-50%) translateY(-130%);
+	transform: translateX(-50%) translateY(-140%);
 	
 }
 
