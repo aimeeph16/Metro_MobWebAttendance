@@ -1,11 +1,13 @@
-var office=['kedoya', 'bandung', 'joglo', 'aceh', 
-            'biro semarang', 'makasar', 'transmisi semarang', 
-            'transmisi surabaya', 'transmisi denpasar', 
-            'transmisi yogyakarta'];
+// var office=['kedoya', 'bandung', 'joglo', 'aceh', 
+//             'biro semarang', 'makasar', 'transmisi semarang', 
+//             'transmisi surabaya', 'transmisi denpasar', 
+//             'transmisi yogyakarta'];
 
 // var office="";
 
 function checkOffice() {
+    // office = document.getElementById('officeName').value;
+    
     document.getElementById("getLocationContent").style.display="block";
 }
 
@@ -36,6 +38,7 @@ var acehLong = 95.3475721;
 
 var x = document.getElementById("location");
 var y = document.getElementById("distance");
+var z = document.getElementById("office");
 
 function getLocation() {
 if (navigator.geolocation) {
@@ -70,56 +73,24 @@ function toRad(Value)
 function showPosition(position) {
 x.innerHTML = "Latitude: " + position.coords.latitude +
 "<br>Longitude: " + position.coords.longitude;
-y.innerHTML = "Your distance to " + document.getElementById('officeName').value + " office is: " + 
+y.innerHTML = "Your distance to " + selectedOffice + " office is: " + 
 (calcCrow(acehLat, acehLong, position.coords.latitude, position.coords.longitude).toFixed(1)) +
 " km";
-// y.innerHTML = office;
-}
 
-function update() {
-    var select = document.getElementById('office');
-    var option = select.options[select.selectedIndex];
-    checkOffice();
-    document.getElementById('value').value = option.value;
-    document.getElementById('officeName').value = option.text;
 }
-
-update();
 
 /*--------------------------------------*/
-
-$(".custom-select").each(function() {
-    var classes = $(this).attr("class"),
-        id      = $(this).attr("id"),
-        name    = $(this).attr("name");
-    var template =  '<div class="' + classes + '">';
-        template += '<span class="custom-select-trigger">' + $(this).attr("placeholder") + '</span>';
-        template += '<div class="custom-options">';
-        $(this).find("option").each(function() {
-          template += '<span class="custom-option ' + $(this).attr("class") + '" data-value="' + $(this).attr("value") + '">' + $(this).html() + '</span>';
-        });
-    template += '</div></div>';
+var selectedOffice;
+const btn = document.querySelector('#btn');        
+const radioButtons = document.querySelectorAll('input[name="option"]');
+btn.addEventListener("click", () => {
+    // let selectedOffice;
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            selectedOffice = radioButton.value;
+            break;
+        }
+    }
     
-    $(this).wrap('<div class="custom-select-wrapper"></div>');
-    $(this).hide();
-    $(this).after(template);
-  });
-  $(".custom-option:first-of-type").hover(function() {
-    $(this).parents(".custom-options").addClass("option-hover");
-  }, function() {
-    $(this).parents(".custom-options").removeClass("option-hover");
-  });
-  $(".custom-select-trigger").on("click", function() {
-    $('html').one('click',function() {
-      $(".custom-select").removeClass("opened");
-    });
-    $(this).parents(".custom-select").toggleClass("opened");
-    event.stopPropagation();
-  });
-  $(".custom-option").on("click", function() {
-    $(this).parents(".custom-select-wrapper").find("select").val($(this).data("value"));
-    $(this).parents(".custom-options").find(".custom-option").removeClass("selection");
-    $(this).addClass("selection");
-    $(this).parents(".custom-select").removeClass("opened");
-    $(this).parents(".custom-select").find(".custom-select-trigger").text($(this).text());
-  });
+    getLocation();
+});
