@@ -88,6 +88,8 @@ btn.addEventListener("click", () => {
     for (const radioButton of radioButtons) {
         if (radioButton.checked) {
             selectedOffice = radioButton.value;
+            
+            // window.location.href="GetLocation.php?selectedOffice='Kedoya'";
             break;
         }
     }
