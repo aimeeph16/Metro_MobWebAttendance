@@ -1,5 +1,5 @@
 <!-- <script src="test.js"></script> -->
-<script src="js/camscript.js"></script>
+<!-- <script src="js/camscript.js"></script> -->
 <script type="text/javascript">
     <?php $abc = "<script>document.write(abc)</script>"?>   
 </script>
@@ -7,17 +7,16 @@
 <?php 
     session_start();
 
-    file_put_contents();
+    // file_put_contents();
 
     // $nik = $_SESSION['nik'];
-    $nik = 111111;
-    $fileName = "testFile";
+    $nik = 111;
+    // $fileName = "testFile";
+    $fileName = $nik."_".date("dmy")."_1";
 
     $check;
 
-    // $fileName = $nik.date("dmy")."_".$check;
-
-    require_once 'include/DB_Functions.php';
+    // require_once 'include/DB_Functions.php';
 
         $DB_HOST = "localhost";
         $DB_USER = "root";
@@ -30,16 +29,19 @@
             if ($conn->connect_error) {
                 die("Connection failed: " . $conn->connect_error);
               }
-
-        $sql = "INSERT INTO attendance (NIK, AttendanceDate, CheckIn, CheckOut, CheckInPhoto, CheckOutPhoto)
-        VALUES ($nik, CURDATE(), CURRENT_TIME(), NULL, $filename, NULL)";
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+          
+          $sql = "INSERT INTO attendance (NIK, AttendanceDate, CheckIn, CheckOut, CheckInPhoto, CheckOutPhoto)
+        VALUES ($nik, CURDATE(), CURRENT_TIME(), NULL, '$fileName', NULL)";
         
         if ($conn->query($sql) === TRUE) {
           echo "New record created successfully";
         } else {
           echo "Error: " . $sql . "<br>" . $conn->error;
         }
-
-    echo $abc;
+        
+        echo $abc;
+      }
 
 ?>
