@@ -44,7 +44,7 @@
     canvas.getContext("2d").drawImage(video, 0, 0);
     const pic = canvas.toDataURL("image/png");
     img.src = pic;
-    downloadImage(pic, 'canvas.png');
+    downloadImage(pic, pic.substring(0,5)+'.png');
     screenshotsContainer.prepend(img);
 
   });
