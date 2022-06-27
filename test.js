@@ -1,1 +1,0 @@
-window.location.href="GetLocation.php?selectedOffice='Kedoya'";

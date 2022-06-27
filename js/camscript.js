@@ -42,13 +42,20 @@
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
     canvas.getContext("2d").drawImage(video, 0, 0);
-    img.src = canvas.toDataURL("image/png");
-    
-    var pic = img.src.replace("image/png", "image/octet-stream");
-    window.location.href = pic;
-
+    const pic = canvas.toDataURL("image/png");
+    img.src = pic;
+    downloadImage(pic, 'canvas.png');
     screenshotsContainer.prepend(img);
+
   });
+
+  function downloadImage(data, filename = 'untitled.png') {
+    var a = document.createElement('a');
+    a.href = data;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+}
 
   // stop video stream
   function stopVideoStream() {

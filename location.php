@@ -1,3 +1,44 @@
+<?php
+        session_start();
+        // require_once 'include/DB_Functions.php';
+
+        $DB_HOST = "localhost";
+        $DB_USER = "root";
+        $DB_PASSWORD = "";
+
+        $DB_DATABASE = "MetroAttendance";
+            
+            // koneksi ke mysql database
+            $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE);
+            
+            if ($conn->connect_error) {
+                die("Connection failed: " . $conn->connect_error);
+            }
+
+            if ($_SERVER["REQUEST_METHOD"] == "GET") {
+                $officeName = $_GET['officeName'];
+                
+                if (empty($officeName)) {
+                    echo "empty";
+                    } else {
+                    $select = mysqli_query($conn, "SELECT * FROM `office` WHERE OfficeName = 'Kedoya';");
+
+                    if (mysqli_num_rows($select) > 0) {
+                        
+
+                        while( $row = mysqli_fetch_assoc($select)) {
+                        // echo $officeName ."found";
+                        echo $officeName ." latitude: " .$row['Latitude'];
+                        
+                        }
+                    }
+                
+                    else {
+                    exit('office not found');
+                    }
+                }
+                }
+        ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -144,50 +185,7 @@
               </div>
           </div>
     </div>
-    <?php
-        session_start();
-        require_once 'include/DB_Functions.php';
-        require_once 'GetLocation.php';
-
-        $DB_HOST = "localhost";
-        $DB_USER = "root";
-        $DB_PASSWORD = "";
-
-        $DB_DATABASE = "MetroAttendance";
-            
-            // koneksi ke mysql database
-            $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE);
-            
-            if ($conn->connect_error) {
-                die("Connection failed: " . $conn->connect_error);
-            }
-
-            // $pickedOffice = "<script>document.write(scripted)</script>";
-
-            if ($_SERVER["REQUEST_METHOD"] == "GET") {
-                $officeName = $_GET['officeName'];
-                
-                if (empty($officeName)) {
-                    echo "empty";
-                    } else {
-                    $select = mysqli_query($conn, "SELECT * FROM `office` WHERE OfficeName = $pickedOffice");
-
-                    if (mysqli_num_rows($select) > 0) {
-                        
-
-                        while( $row = mysqli_fetch_assoc($select)) {
-                        // echo $officeName ."found";
-                        echo $officeName ." latitude: " .$row['Latitude'];
-                        
-                        }
-                    }
-                
-                    else {
-                    exit('office not found');
-                    }
-                }
-                }
-        ?>
+    
     
       <script src="js/locationscript.js" type="text/javascript"></script>
       <!-- <script type="text/javascript"> -->
