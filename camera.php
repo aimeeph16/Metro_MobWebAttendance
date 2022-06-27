@@ -22,10 +22,13 @@
               <video autoplay id="video" class="frame"></video>
               <canvas class="frame" id="canvas"></canvas>
               <div id="btnScreenshot" style="padding: 10px;"><button type="button" class="btn btn-primary btn-lg" style="width: 270px"> Capture</button></div>
+              <?php include 'cameraSave.php' ?>
                 <div class="d-flex justify-content-center flex-wrap" >
                   <div class="d-flex" style="margin-bottom: 50px">
-                    <div class="p-2" style="padding: 10px;"><a class="btn btn-primary" style="background-color:#2A8335" href="location.html" role="button">Check-In</a></div>
-                    <div class="p-2" style="padding: 10px;"><a class="btn btn-primary" style="background-color:#C62020" href="attendance" role="button">Check-Out</a></div>
+                    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+                      <div class="p-2" style="padding: 10px;"><button class="btn btn-primary" style="background-color:#2A8335">Check-In</button></div>
+                      <div class="p-2" style="padding: 10px;"><button class="btn btn-primary" style="background-color:#C62020">Check-Out</button></div>
+                    </form>
                   </div>
                 </div>
               </div>
