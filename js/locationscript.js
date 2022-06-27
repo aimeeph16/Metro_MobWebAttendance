@@ -79,6 +79,7 @@ y.innerHTML = "Your distance to " + selectedOffice + " office is: " +
 
 }
 
+
 /*--------------------------------------*/
 var selectedOffice;
 const btn = document.querySelector('#btn');        

@@ -117,10 +117,10 @@
                   // echo hash('sha256', $password);
                   // echo password_verify($row['salt'], hash('sha256', $password));
                     if ($hash == $row["salt"]) {
-                      echo "user found";
+                      echo "home";
                       header("Location:home.php");
                     } else {
-                      echo "user not found";
+                      echo "wrong password";
                     }
                 }
             }

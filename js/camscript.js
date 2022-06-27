@@ -43,6 +43,10 @@
     canvas.height = video.videoHeight;
     canvas.getContext("2d").drawImage(video, 0, 0);
     img.src = canvas.toDataURL("image/png");
+    
+    var pic = img.src.replace("image/png", "image/octet-stream");
+    window.location.href = pic;
+
     screenshotsContainer.prepend(img);
   });
 
