@@ -48,14 +48,6 @@
     screenshotsContainer.prepend(img);
   });
 
-  function downloadImage(data, filename = 'untitled.jpeg') {
-    var a = document.createElement('a');
-    a.href = data;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-}
-
   // stop video stream
   function stopVideoStream() {
     if (videoStream) {

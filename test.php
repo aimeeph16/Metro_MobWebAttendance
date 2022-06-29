@@ -1,18 +1,43 @@
-<?php 
+    <?php 
+        $nik = $_POST['nik'];
+        echo 'nik: '. $nik;
+        
+        $dir = '/';
+        $file = basename($_FILES['image']['name']);
+        
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $file)) {
+            $photoBase = base64_encode($file);
+            echo ' | encoded: '. $photoBase;
 
-    $img = $_POST['image'];
-    $folderPath = "photos/";
-  
-    $image_parts = explode(";base64,", $img);
-    $image_type_aux = explode("image/", $image_parts[0]);
-    $image_type = $image_type_aux[1];
-  
-    $image_base64 = base64_decode($image_parts[1]);
-    $fileName = uniqid() . '.png';
-  
-    $file = $folderPath . $fileName;
-    file_put_contents($file, $image_base64);
-  
-    print_r($fileName);
-
-?>
+        } else {
+            echo "Error.\n";
+        }
+    
+        $DB_HOST = "localhost";
+        $DB_USER = "root";
+        $DB_PASSWORD = "";
+    
+        $DB_DATABASE = "MetroAttendance";
+            
+        $conn = new mysqli($DB_HOST, $DB_USER, $DB_PASSWORD, $DB_DATABASE);
+        
+        if ($conn->connect_error) {
+            die(" | Connection failed: " . $conn->connect_error);
+        }
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+          $sql = "INSERT INTO `attendance` (NIK, AttendanceDate, CheckIn, CheckOut, CheckInPhoto, CheckOutPhoto)
+                  VALUES ($nik, CURDATE(), CURRENT_TIME(), NULL, 'test', NULL)
+                  ON DUPLICATE KEY
+                  UPDATE `CheckInPhoto` = 'testUpdate'";
+        
+            if ($conn->query($sql) === TRUE) {
+              echo " | New record created successfully";
+            } else {
+              echo " | Error: " . $sql . "<br>" . $conn->error;
+            }
+              
+    
+        }
+    ?>

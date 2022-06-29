@@ -107,11 +107,10 @@ body {
  .frame {
 	 border-style: solid;
 	 border-color: white;
-	 border-radius: 25px;
-	 width:80%;
-	 margin: 18px auto; 
+	 /* border-radius: 25px; */
+	 /* width:80%; */
+	 /* margin: 18px auto;  */
 	 /* margin-top:15px;
 	 margin-bottom: 25px; */
 	 
  }
-
