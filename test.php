@@ -1,13 +1,13 @@
     <?php 
         $nik = $_POST['nik'];
-        echo 'nik: '. $nik;
+        // echo 'nik: '. $nik;
         
         $dir = '/';
         $file = basename($_FILES['image']['name']);
-        
+        // echo $file;
         if (move_uploaded_file($_FILES['image']['tmp_name'], $file)) {
-            $photoBase = base64_encode($file);
-            echo ' | encoded: '. $photoBase;
+            $photoBase = base64_encode(file_get_contents($file));
+            echo $photoBase;
 
         } else {
             echo "Error.\n";
@@ -33,7 +33,7 @@
                   UPDATE `CheckInPhoto` = 'testUpdate'";
         
             if ($conn->query($sql) === TRUE) {
-              echo " | New record created successfully";
+            //   echo " | New record created successfully";
             } else {
               echo " | Error: " . $sql . "<br>" . $conn->error;
             }

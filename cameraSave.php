@@ -1,20 +1,10 @@
-<!-- <script src="test.js"></script> -->
-<!-- <script src="js/camscript.js"></script> -->
-
-<script type="text/javascript">
-    var abc = "hi there";
-    <?php $abc = "<script>document.write(abc)</script>"?>   
-</script>
-
 <?php 
     session_start();
     if(isset($_POST['image'])){
         $img = $_POST['image']; 
-        // echo 'halo';
     }else{
         $img = "image tidak diset di Method GET";
     }
-    // $img = $_POST['image'];
     $folderPath = "photos/";
   
     $image_parts = explode(";base64,", $img);
@@ -22,18 +12,16 @@
     $image_type = $image_type_aux[1];
 
     $photoBase = $image_parts[1];
+    echo $photoBase;
   
     $image_base64 = base64_decode($photoBase);
 
     $nik = $_SESSION['nik'];
-    // $nik = 333;
     $fileName = $nik."_".date("dmy")."_1". '.jpg';
-    // $fileName = uniqid() . '.png';
   
     $file = $folderPath . $fileName;
     file_put_contents($file, $image_base64);
   
-    // print_r($image_parts[1]);
 
     $DB_HOST = "localhost";
     $DB_USER = "root";
